@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Builder</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <aside>
+      <!--  -->
+      <div class="profile">
+        <div class="img"></div>
+        <div class="data">
+          <p>Team Builder</p>
+          <span>
+            Edit profile
+            <i data-feather="settings"></i>
+          </span>
+        </div>
+      </div>
+      <!--  -->
+      <div class="dropdown">
+        <input type="checkbox" name="menu-drop" id="menu-drop" />
+        <label for="menu-drop" class="menu-drop-label">
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <!--  -->
+      <nav>
+        <span class="close-dropdown">
+          <i data-feather="x"></i>
+        </span>
+        <ul>
+          <li class="active"><i data-feather="aperture"></i> Overview</li>
+          <li><i data-feather="trello"></i> News</li>
+        </ul>
+        <!--  -->
+        <ul>
+          <li><i data-feather="sliders"></i> Dashboard</li>
+          <li><i data-feather="message-square"></i> Messages</li>
+          <li><i data-feather="bell"></i> Notifications</li>
+          <li><i data-feather="user"></i> Account</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="container">
+      <!--  -->
+      <div class="search">
+        <input
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Search for teams, ideas, and tech-stacks"
+        />
+        <label for="search"><i data-feather="search"></i></label>
+      </div>
+      <!--  -->
+      <div class="featured-ideas">
+        <!--  -->
+        <h2>Ideas</h2>
+        <div class="ideas">
+          <div class="idea pl1">
+            <div class="img">
+              <img src="./assets/logo.svg" alt="Thumbnail idea" />
+            </div>
+            <div class="info-idea">
+              <h2>Idea-1</h2>
+              <span>Description</span>
+            </div>
+          </div>
+          <!--  -->
+          <div class="idea pl2">
+            <div class="img">
+              <img src="./assets/logo.svg" alt="Thumbnail idea" />
+            </div>
+            <div class="info-idea">
+              <h2>Idea-2</h2>
+              <span>Description</span>
+            </div>
+          </div>
+          <!--  -->
+          <div class="idea pl3">
+            <div class="img">
+              <img src="./assets/logo.svg" alt="Thumbnail idea" />
+            </div>
+            <div class="info-idea">
+              <h2>Idea-3</h2>
+              <span>Description</span>
+            </div>
+          </div>
+          <!--  -->
+          <div class="idea pl4">
+            <div class="img">
+              <img src="./assets/logo.svg" alt="Thumbnail idea" />
+            </div>
+            <div class="info-idea">
+              <h2>Idea-4</h2>
+              <span>Description</span>
+            </div>
+          </div>
+          <!-- -->
+          <div class="idea pl2">
+            <div class="img">
+              <img src="./assets/logo.svg" alt="Thumbnail idea" />
+            </div>
+            <div class="info-idea">
+              <h2>Idea-5</h2>
+              <span>Description</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="views">
+        <div class="profile-views">
+          <!--  -->
+          <h2>Profile Views</h2>
+          <div class="container-views">
+            <div class="view v1">
+              <div class="img"></div>
+              <div class="info">
+                <p>Vidhya</p>
+                <span>1 day ago</span>
+              </div>
+              <span>Explorer</span>
+            </div>
+            <!--  -->
+            <div class="view v2">
+              <div class="img"></div>
+              <div class="info">
+                <p>Brasscobra</p>
+                <span>3 days ago</span>
+              </div>
+              <span>Mern Stack Engineer</span>
+            </div>
+            <!--  -->
+            <div class="view v3">
+              <div class="img"></div>
+              <div class="info">
+                <p>Lalkishan</p>
+                <span>2 week ago</span>
+              </div>
+              <span>Still Learning</span>
+            </div>
+          </div>
+        </div>
+
+        <!--  -->
+        <div class="suggestions">
+          <h2>Teams</h2>
+          <div class="teams">
+            <!--  -->
+            <div class="team t1">
+              <div class="img"></div>
+              <p>Team Name-1</p>
+              <span>Project Idea/Description</span>
+            </div>
+            <!--  -->
+            <div class="team t2">
+              <div class="img"></div>
+              <p>Team Name-2</p>
+              <span>Project Idea/Description</span>
+            </div>
+            <!--  -->
+            <div class="team t3">
+              <div class="img"></div>
+              <p>Team Name-3</p>
+              <span>Project Idea/Description</span>
+            </div>
+            <!--  -->
+            <div class="team t4">
+              <div class="img"></div>
+              <p>Team Name-4</p>
+              <span>Project Idea/Description</span>
+            </div>
+            <!--  -->
+            <div class="team t5">
+              <div class="img"></div>
+              <p>Team Name-5</p>
+              <span>Project Idea/Description</span>
+            </div>
+            <!--  -->
+            <div class="team t6">
+              <div class="img"></div>
+              <p>Team Name-6</p>
+              <span>Project Idea/Description</span>
+            </div>
+            <!--  -->
+            <div class="team t7">
+              <div class="img"></div>
+              <p>Team Name-7</p>
+              <span>Project Idea/Description</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

@@ -164,8 +164,8 @@ body {
 }
 
 .button-img{
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 40px;
   background-image: url("assets/attach.svg");
   background-repeat: no-repeat;
   background-position: center;

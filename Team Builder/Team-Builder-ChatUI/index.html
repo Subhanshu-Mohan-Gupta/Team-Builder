@@ -69,10 +69,11 @@
 
   <form class="msger-inputarea">
     <input type="text" class="msger-input" placeholder="Enter your message...">
+    <input id="mediaCapture" type="file" id="file1" name="image" accept="image/*" capture="camera" style="display:none"/>
+    <img class ="button-img" src="assets/attach.svg" id="upfile1" style="cursor:pointer" />
     <button type="submit" class="msger-send-btn">Send</button>
-    </div>
   </form>
- <div>
+ <!-- <div>
   <form id="image-form" action="#">
     <input id="mediaCapture" type="file" accept="image/*" capture="camera"/>
       <button id="submitImage" title="Add an image"  class="btn">
@@ -80,10 +81,11 @@
           </div>
     </button>
   </form>
-</div>
+</div> -->
 
 
 </section>
   </body>
+    <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="module" src="script.js"></script>
 </html>

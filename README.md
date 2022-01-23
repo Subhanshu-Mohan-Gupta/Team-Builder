@@ -11,7 +11,7 @@ Find Your Better Team
   - [Long description](#long-description)
 
 ## Short Description 
-Hackathons are a great way to meet new people, but we can choose our right teammates in a rush. No right? We, too, faced this problem while selecting the teammates. 
+Hackathons are a great way to meet new people, but we can choose our right teammates in a rush. No right? We too faced this problem while selecting the teammates. 
 Thus team build was born. A platform where members of hackathons have free will and options to choose from, they could even contact the original idea owner. It is better for both the idea owner and the participant as discussion always result in a better product.
 
 ## Demo video 

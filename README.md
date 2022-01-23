@@ -1,1 +1,49 @@
-# Team-Builder
+# Team-Builder 
+Find Your Better Team
+
+![logo](https://user-images.githubusercontent.com/72182858/150678144-1b892edd-3d9d-48f1-98ad-b2ec4f334698.svg)
+
+## Contents
+- [Submission or project name](#team-builder)
+  - [Contents](#contents)
+  - [Short Description](#short-description)
+  - [Demo video](#demo-video)
+  - [Long description](#long-description)
+
+## Short Description 
+
+Hackathons are a great way to meet new people, but we can choose our right teammates in a rush. No right? We, too, faced this problem while selecting the teammates. 
+Thus team build was born. A platform where members of hackathons have free will and options to choose from, they could even contact the original idea owner. It is better for both the idea owner and the participant as through discussion always result in a better product.
+
+## Demo video 
+
+[![Watch the video](https://youtu.be/Ex-PlGfAF3M)
+
+## Long description 
+
+### About
+
+Team Builder was build based on the difficulties most of us coming across during hackathons mostly, finding a team. So, Team Builder aims to eradicate this problem and bring up people who having such trouble and letting find their better in a simple way as a connecting platform who finding teams.
+
+### Design
+
+Team Builder is designed with a highly responsive layout using HTML, CSS,JavaScript. The layout is very simple and user-friendly. We plan on improving our design in the future to fit the needs.
+
+### Dashboard
+
+One of the pages is the personal dashboard of a household using it. 
+
+### Conclusion
+
+So we the team behind Team Builder are budding developers with so much aspiration to bring about a change in the society. When we came across this competition, we up-skilled ourselves along the way to provide a professional outcome.
+
+
+#### Tech Stacks used to build:
+ > HTML, CSS, JavaScript, Firebase
+
+
+
+
+
+
+

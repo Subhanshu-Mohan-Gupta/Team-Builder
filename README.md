@@ -12,7 +12,7 @@ Find Your Better Team
 
 ## Short Description 
 Hackathons are a great way to meet new people, but we can choose our right teammates in a rush. No right? We too faced this problem while selecting the teammates. 
-Thus team build was born. A platform where members of hackathons have free will and options to choose from, they could even contact the original idea owner. It is better for both the idea owner and the participant as discussion always result in a better product.
+Thus Team Builder was born. A platform where members of hackathons have free will and options to choose from, they could even contact the original idea owner. It is better for both the idea owner and the participant as discussion always result in a better product.
 
 ## Demo video 
 [![Watch the video](https://user-images.githubusercontent.com/72182858/150680306-e6e63dfe-b048-44cd-adc5-14b1a4524622.png)](https://youtu.be/Kbz8FF8_Hcc)

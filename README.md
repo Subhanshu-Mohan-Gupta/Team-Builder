@@ -11,32 +11,26 @@ Find Your Better Team
   - [Long description](#long-description)
 
 ## Short Description 
-
 Hackathons are a great way to meet new people, but we can choose our right teammates in a rush. No right? We, too, faced this problem while selecting the teammates. 
-Thus team build was born. A platform where members of hackathons have free will and options to choose from, they could even contact the original idea owner. It is better for both the idea owner and the participant as through discussion always result in a better product.
+Thus team build was born. A platform where members of hackathons have free will and options to choose from, they could even contact the original idea owner. It is better for both the idea owner and the participant as discussion always result in a better product.
 
 ## Demo video 
-
-
 [![Watch the video](https://user-images.githubusercontent.com/72182858/150680306-e6e63dfe-b048-44cd-adc5-14b1a4524622.png)](https://youtu.be/Kbz8FF8_Hcc)
+
+
 ## Long description 
 
 ### About
-
-Team Builder was build based on the difficulties most of us coming across during hackathons mostly, finding a team. So, Team Builder aims to eradicate this problem and bring up people who having such trouble and letting find their better in a simple way as a connecting platform who finding teams.
+Team Builder was built based on the difficulties most of us coming across during hackathons mostly, finding a team. So, Team Builder aims to eradicate this problem and bring up people who have such trouble and let them find their better in a simple way as a connecting platform who finding teams.
 
 ### Design
-
 Team Builder is designed with a highly responsive layout using HTML, CSS,JavaScript. The layout is very simple and user-friendly. We plan on improving our design in the future to fit the needs.
 
 ### Dashboard
-
 One of the pages is the personal dashboard of a household using it. 
 
 ### Conclusion
-
 So we the team behind Team Builder are budding developers with so much aspiration to bring about a change in the society. When we came across this competition, we up-skilled ourselves along the way to provide a professional outcome.
-
 
 #### Tech Stacks used to build:
  > HTML, CSS, JavaScript, Firebase

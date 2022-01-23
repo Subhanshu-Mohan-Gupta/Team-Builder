@@ -65,7 +65,6 @@ So we the team behind Team Builder are budding developers with so much aspiratio
    ```bash
    node app.js
    ```
-  7. Open any browser and paste this ``bash http://localhost:4000/``
+  7. Open any browser and paste this ``bash http://localhost:4000/`` <br>
 
-<br>
 #### Now you're good to go !! Have a nice day :)

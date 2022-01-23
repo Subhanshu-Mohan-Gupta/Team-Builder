@@ -3,7 +3,7 @@
  * firesore database.
  */
 
- import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js';
 
  import {
   getFirestore,
@@ -26,6 +26,7 @@ import {
   // getDownloadURL,
 } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-storage.js';
 
+
 import { getFirebaseConfig } from '/views/firebase-config.js';
 
 
@@ -38,6 +39,8 @@ const menu = document.querySelector("nav");
 var ideaListElement = document.getElementById("idea-list");
 var profileListElement = document.getElementById("profile_list");
 var teamListElement = document.getElementById("team_list")
+var myTeamButtonElement = document.getElementById("myteam");
+
 
 function toggleMenu() {
   menu.classList.toggle("active");
@@ -55,6 +58,8 @@ function closeDrop() {
 openMenu.addEventListener("click", openDrop);
 closeMenu.addEventListener("click", closeDrop);
 
+myTeamButtonElement.addEventListener("click", myTeam);
+var myFormElement = document.getElementById('teamform');
 
 /**
  * as we have not added
@@ -256,6 +261,13 @@ function deleteTeam(id) {
   if (div) {
     div.parentNode.removeChild(div);
   }
+}
+
+
+
+function myTeam() {
+//window.alert("success till here");
+ myFormElement.submit();
 }
 
 

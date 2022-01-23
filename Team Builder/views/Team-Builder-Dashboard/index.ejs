@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Builder</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="/views/Team-Builder-Dashboard/style.css" />
   </head>
@@ -43,7 +44,8 @@
         <!--  -->
         <ul>
           <li><i data-feather="sliders"></i> Dashboard</li>
-          <li><i data-feather="message-square"></i> Messages</li>
+         <form action="/myteam" method="post" id="teamform"> <li id="myteam"><i data-feather="message-square"></i> My Team</li>
+         </form>
           <li><i data-feather="bell"></i> Notifications</li>
           <li><i data-feather="user"></i> Account</li>
         </ul>

@@ -16,6 +16,9 @@ const express = require('express');
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 
+const path = require('path');
+
+const router = express.Router();
 
 const app = express();
 const PORT = 4000;
@@ -31,26 +34,34 @@ var users = [];
 
 var db = fire.firestore();
 
-db.collection("users").get().then((snapshot) => {
-    snapshot.forEach((doc) => {
+function loaddbdata() {
+    db.collection("users").get().then((snapshot) => {
+        snapshot.forEach((doc) => {
+        
+           var myusername = doc.data().username;
+           var mypassword = doc.data().password;
+       
+          var myprofileurl = doc.data().profileurl;
     
-       var myusername = doc.data().username;
-       var mypassword = doc.data().password;
-   
-      var myprofileurl= doc.data().profileurl;
-
-     
-       var temp = {
-        'username' : myusername,
-        'password' : mypassword,
-        'profileurl' : myprofileurl
-       }
-
-        users.push(temp);
+          var myteam = doc.data().team;
+         
+           var temp = {
+            'username' : myusername,
+            'password' : mypassword,
+            'profileurl' : myprofileurl,
+            'team' : myteam
+           }
     
+            users.push(temp);
+        
+        })
+        
     })
-    
-})
+}
+loaddbdata();
+
+
+
 
 /**
  * function to check wether 
@@ -84,6 +95,7 @@ app.use(express.static(__dirname));
 
 app.use(cookieParser());
 
+app.use('/', router);
 var session;
 
 
@@ -99,6 +111,30 @@ app.get('/',(req,res) => {
     res.render('Team-Builder-Login/sign-in/signin',{root:__dirname});
 });
 
+app.post("/signup", (req, res) => {
+
+   try {
+    var userdata = {
+        username : req.body.username,
+        email : req.body.email,
+        password : req.body.pass
+    }
+
+    db.collection("users").doc(req.body.username).set(userdata).then(() => {
+    console.log("user added successfully with " + userdata);
+    });
+
+    loaddbdata();
+
+    res.render("Team-Builder-Login/sign-in/signin.ejs");
+
+   }
+   catch(e){
+       console.log(e);
+   }
+  
+})
+
 
 
 app.post("/dashboard", (req, res) => {
@@ -111,8 +147,9 @@ app.post("/dashboard", (req, res) => {
           if(index!=-1 ){
               session = req.session;
               session.userid = req.body.username;
+              session.ind = index;
               console.log(req.session);
-            //   res.render("test");
+            
             var user = session.userid;
               res.render("Team-Builder-Dashboard/index", {
                   user : user,
@@ -125,5 +162,10 @@ app.post("/dashboard", (req, res) => {
 })
 
 
+
+app.post("/myteam", (req, res) => {
+    console.log("reached at the server ");
+    res.render("Team-Builder-ChatUI/index");
+});
+
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));
- module.exports = app;

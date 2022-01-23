@@ -1,11 +1,9 @@
-
 /**
  * these are imports 
  * some may be unused but 
  * we will require them later
  * 
  */
-
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js';
 //  import {
 //    getAuth,
@@ -40,7 +38,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase
 //  } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-messaging.js'; 
 //  import { getPerformance } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-performance.js';
 
- import { getFirebaseConfig } from '/firebase-config.js';
+ import { getFirebaseConfig } from '/views/firebase-config.js';
  
 //////  imports ended ///////
 
@@ -177,7 +175,7 @@ function random(min, max) {
 
 
 
-function loadMessages() {
+function loadMessages() {    
   // Create the query to load the last 12 messages and listen for new ones.
   const recentMessagesQuery = query(collection(getFirestore(), 'messages'), orderBy('timestamp', 'desc'), limit(12));
   
@@ -225,8 +223,6 @@ function createAndInsertMessage(id, timestamp) {
   const div = container.firstChild;
   div.setAttribute('id', id);
 
-  // If timestamp is null, assume we've gotten a brand new message.
-  // https://stackoverflow.com/a/47781432/4816918
   timestamp = timestamp ? timestamp.toMillis() : Date.now();
   div.setAttribute('timestamp', timestamp);
 

@@ -1,7 +1,7 @@
 # Team-Builder 
 Find Your Better Team
 
-![logo](https://user-images.githubusercontent.com/72182858/150678144-1b892edd-3d9d-48f1-98ad-b2ec4f334698.svg)
+!<img src="https://user-images.githubusercontent.com/72182858/150678144-1b892edd-3d9d-48f1-98ad-b2ec4f334698.svg" width="100" height="100">
 
 ## Contents
 - [Submission or project name](#team-builder)
@@ -41,9 +41,34 @@ So we the team behind Team Builder are budding developers with so much aspiratio
 #### Tech Stacks used to build:
  > HTML, CSS, JavaScript, Firebase
 
+### Installation
 
+  1. Download node.js from ``bash https://nodejs.org/en/download/ ``
+  2. Open vs-code/cmd/powershell and in the new terminal run 
+   ```bash 
+   git clone https://github.com/MLH-LHD-Build-2022/Team-Builder
+   ```
+  3. run <br>
+   ```bash
+   cd 'Team Builder'
+   ```
+   
+  4. run <br>
+   ```bash
+   npm install express
+   ```
+  5. run <br>
+   ```bash
+   npm install firebase cookie-parser express-session
+   ```   
+  6. run <br>
+   ```bash
+   node app.js
+   ```
+  7. Open any browser and paste this ``bash http://localhost:4000/``
 
-
-
-
-
+<br>
+``bash
+Now you're good to go !! 
+Have a nice day :)
+``

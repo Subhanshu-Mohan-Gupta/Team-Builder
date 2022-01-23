@@ -6,22 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
-    <title>Sign in</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/form.css">
+    <title>Team Builder</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/form.css">
 </head>
 
 <body>
     <div class="logo">
-        <div class="logo-text">  
-            <p> <br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Team Builder </p>
-        </div>
+      <div class="logo-text">  
+          <p> <br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Team Builder </p>
       </div>
-      <br><br>
+    </div>
+    <br><br>
     <div class="background"></div>
     <main>
         <div class="left-column">
-            <h1 class="s-title">Sign in</h1>
+            <h1 class="main-title">Welcome</h1>
             <div class="bottom-links">
                 <a href="#">Privacy policy</a>
                 <span>&amp;</span>
@@ -36,13 +36,21 @@
                     <input id="username" placeholder="Your username goes here..." type="text" required>
                 </div>
                 <div class="form-row">
+                    <label for="email">Email</label>
+                    <input id="email" placeholder="Email..." type="email" required>
+                </div>
+                <div class="form-row">
                     <label for="pass">Password</label>
                     <input id="pass" placeholder="Password" type="password" required>
                 </div>
+                <div class="form-row">
+                    <label for="re-pass">Repeat password</label>
+                    <input id="re-pass" placeholder="Repeat password" type="password" required>
+                </div>
                 <div class="form-row flex-row">
-                    <button type="submit">Login</button>
+                    <button type="submit">Generate link</button>
                     <span>or</span>
-                    <a href="../forgot-password/index.html">Forgot password?</a>
+                    <a href="./sign-in/index.html">Sign in</a>
                 </div>
             </form>
         </div>

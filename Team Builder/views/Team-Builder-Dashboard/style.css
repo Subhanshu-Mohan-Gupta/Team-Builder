@@ -313,10 +313,7 @@ nav ul li svg {
   margin-right: 15px;
 }
 
-.views .profile-views .v1 .img {
-  background: url(./assets/vidhya.png) no-repeat 50% 5%;
-  background-size: 120%;
-}
+
 
 .views .profile-views .v2 .img {
   background: url(./assets/brasscobra.png) no-repeat 50% 5%;
@@ -405,39 +402,17 @@ nav ul li svg {
 }
 
 .views .suggestions .teams .t1 .img {
-  background: url(./assets/logo.svg) no-repeat 0% 50%;
   background-size: cover;
 }
 
 .views .suggestions .teams .t2 .img {
-  background: url(./assets/logo.svg) no-repeat 50% 50%;
   background-size: cover;
 }
 
 .views .suggestions .teams .t3 .img {
-  background: url(./assets/logo.svg) no-repeat 50% 50%;
   background-size: cover;
 }
 
-.views .suggestions .teams .t4 .img {
-  background: url(./assets/logo.svg) no-repeat 50% 50%;
-  background-size: cover;
-}
-
-.views .suggestions .teams .t5 .img {
-  background: url(./assets/logo.svg) no-repeat 50% 50%;
-  background-size: cover;
-}
-
-.views .suggestions .teams .t6 .img {
-  background: url(./assets/logo.svg) no-repeat 50% 50%;
-  background-size: cover;
-}
-
-.views .suggestions .teams .t7 .img {
-  background: url(./assets/logo.svg) no-repeat 30% 50%;
-  background-size: cover;
-}
 
 .views .suggestions .teams .team p {
   font-size: 12px;

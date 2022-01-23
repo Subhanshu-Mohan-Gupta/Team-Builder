@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Builder</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="/views/Team-Builder-Dashboard/style.css" />
+  </head>
+  <body>
+
+    <aside>
+     
+   
+      <div class="profile">
+        <div class="img"></div>
+        <div class="data">
+          <p>Team Builder</p>
+          <span>
+            Edit profile
+            <i data-feather="settings"></i>
+          </span>
+        </div>
+      </div>
+      <!--  -->
+      <div class="dropdown">
+        <input type="checkbox" name="menu-drop" id="menu-drop" />
+        <label for="menu-drop" class="menu-drop-label">
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <!--  -->
+      <nav>
+        <span class="close-dropdown">
+          <i data-feather="x"></i>
+        </span>
+        <ul>
+          <li class="active"><i data-feather="aperture"></i> Overview</li>
+          <li><i data-feather="trello"></i> News</li>
+        </ul>
+        <!--  -->
+        <ul>
+          <li><i data-feather="sliders"></i> Dashboard</li>
+         <form action="/myteam" method="post" id="teamform"> <li id="myteam"><i data-feather="message-square"></i> My Team</li>
+         </form>
+          <li><i data-feather="bell"></i> Notifications</li>
+          <li><i data-feather="user"></i> Account</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="container">
+      <!--  -->
+      <div class="search">
+        <input
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Search for teams, ideas, and tech-stacks"
+        />
+        <label for="search"><i data-feather="search"></i></label>
+      </div>
+      <!-- 
+      this user name will be rendered 
+      after login -->
+      <img height="70px" width="70px" src="<%=profile_url%>">
+      <%= user %>
+
+      <div class="featured-ideas" >
+        <!--  -->
+        <h2>Ideas</h2>
+        <div class="ideas" id="idea-list">
+     
+          <!--  -->
+
+
+
+        </div>
+      </div>
+
+      <div class="views">
+        <div class="profile-views">
+          <!--  -->
+          <h2>Profile Views</h2>
+          <div class="container-views" id="profile_list">
+           
+          </div>
+        </div>
+
+        <!--  -->
+        <div class="suggestions">
+          <h2>Teams</h2>
+          <div class="teams" id="team_list">
+            <!--  -->
+            
+            <!--  -->
+       
+        </div>
+      </div>
+    </div>
+ 
+    <script>
+      feather.replace();
+    </script>
+  </body>
+   <script type="module" src="/views/Team-Builder-Dashboard/script.js"></script>
+</html>

@@ -17,8 +17,8 @@ Thus team build was born. A platform where members of hackathons have free will 
 
 ## Demo video 
 
-![Watch the video](https://youtu.be/Kbz8FF8_Hcc)
 
+[![Watch the video](https://user-images.githubusercontent.com/72182858/150680306-e6e63dfe-b048-44cd-adc5-14b1a4524622.png)](https://youtu.be/Kbz8FF8_Hcc)
 ## Long description 
 
 ### About

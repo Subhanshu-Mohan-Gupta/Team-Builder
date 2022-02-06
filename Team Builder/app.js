@@ -165,7 +165,13 @@ app.post("/dashboard", (req, res) => {
 
 app.post("/myteam", (req, res) => {
     console.log("reached at the server ");
-    res.render("Team-Builder-ChatUI/index");
+    var my_team = users[session.ind].team;
+    var my_user = users[session.ind].username;
+    res.render("Team-Builder-ChatUI/index", {
+        team : my_team,
+        user : my_user
+    });
+   
 });
 
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));

@@ -27,6 +27,15 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
+#image-form {
+  height: 40px;
+  width: 50px;
+}
+
+#submitImage {
+  margin-top: 14px;
+}
+
 .msger {
   display: flex;
   flex-flow: column wrap;
@@ -94,6 +103,27 @@ body {
   align-items: center;
   margin-bottom: 10px;
 }
+.msg-bubble img {
+  max-width: 350px;
+  max-height: 500px;
+}
+
+.right {
+  display: flex;
+  justify-content: right;
+}
+.left {
+  width: max-content;
+  display: flex;
+  justify-content: left;
+}
+
+.input_forms {
+  display: grid;
+  grid-template-columns: 92% 50px;
+}
+
+
 .msg-info-name {
   margin-right: 10px;
   font-weight: bold;
@@ -105,6 +135,14 @@ body {
 .left-msg .msg-bubble {
   border-bottom-left-radius: 0;
 }
+
+
+.ccc {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+}
+
 
 .right-msg {
   flex-direction: row-reverse;

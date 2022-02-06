@@ -24,6 +24,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase
    updateDoc,
   //  doc,
    serverTimestamp,
+   where,
  } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js';
  import {
    getStorage,
@@ -93,7 +94,7 @@ messageFormElement.addEventListener("submit", event => {
 
   ///working stuff
   if(messageInputElement.value) {
-    saveMessage(messageInputElement.value);
+    saveMessage(user,messageInputElement.value, user_team);
     messageInputElement.value = "";
    
   }
@@ -110,14 +111,15 @@ messageFormElement.addEventListener("submit", event => {
  * we have not implemented 
  * sign in part and dont know the user
  */
-async function saveMessage(messageText) {
+async function saveMessage(my_user,messageText, team) {
   // Add a new message entry to the Firebase database.
   try {
     await addDoc(collection(getFirestore(), 'messages'), {
-      name: PERSON_NAME,
+      name: my_user,
       text: messageText,
       profilePicUrl: "http",
-      timestamp: serverTimestamp()
+      timestamp: serverTimestamp(),
+      team : team
     });
   }
   catch(error) {
@@ -177,8 +179,8 @@ function random(min, max) {
 
 function loadMessages() {    
   // Create the query to load the last 12 messages and listen for new ones.
-  const recentMessagesQuery = query(collection(getFirestore(), 'messages'), orderBy('timestamp', 'desc'), limit(12));
-  
+  const recentMessagesQuery = query(collection(getFirestore(), 'messages'), where("team", "==", user_team), orderBy('timestamp', 'desc'), limit(12));
+
   // Start listening to the query.
   onSnapshot(recentMessagesQuery, function(snapshot) {
     snapshot.docChanges().forEach(function(change) {
@@ -208,18 +210,43 @@ function loadMessages() {
       '<div class="msg-img" style="background-image: url(https://as2.ftcdn.net/v2/jpg/02/15/84/43/1000_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg)"></div>'+
       '<div class="msg-bubble">'+
         '<div class="ccc">'+
-          '<div class="msg-info-name"></div>'+
-          '<div class="msg-info-time"></div>'+
+          '<div class="msg-info-name left"></div>'+
+          '<div class="msg-info-time right"></div>'+
         '</div>'+
         '<div class="msg-text">'+
         '</div>'+
       '</div>'+
     '</div>';
 
+    var MESSAGE_TEMPLATE2 = 
+    '<div class="msg right-msg">'+
+    '<!-- <div'+
+    'class="msg-img"'+
+    'style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)" >'+
+   '</div> -->'+
+   '<div class="msg-bubble">'+
+     '<div class="msg-info">'+
+       '<div class="msg-info-name"></div>'+
+       '<div class="msg-info-time"></div>'+
+     '</div>'+
+     '<div class="msg-text">'+
+     '</div>'+
+   '</div>'+
+ '</div>';
 
-function createAndInsertMessage(id, timestamp) {
+
+function createAndInsertMessage(user, name, id, timestamp) {
   const container = document.createElement('div');
-  container.innerHTML = MESSAGE_TEMPLATE;
+ 
+  if(user === name){
+    container.innerHTML = MESSAGE_TEMPLATE2;
+  }
+  else {
+    container.innerHTML = MESSAGE_TEMPLATE;
+  }
+ 
+ 
+ 
   const div = container.firstChild;
   div.setAttribute('id', id);
 
@@ -259,7 +286,7 @@ function createAndInsertMessage(id, timestamp) {
 
 // Displays a Message in the UI.
 function displayMessage(id, timestamp, name, text, picUrl, imageUrl) {
-  var div = document.getElementById(id) || createAndInsertMessage(id, timestamp);
+  var div = document.getElementById(id) || createAndInsertMessage(user, name, id, timestamp);
 
   // profile picture
   // if (picUrl) {
@@ -313,7 +340,7 @@ function onMediaFileSelected(event) {
     signInSnackbarElement.MaterialSnackbar.showSnackbar(data);
     return;
   }
-  saveImageMessage(file);
+  saveImageMessage(user, user_team, file);
   // Check if the user is signed-in
   // if (checkSignedInWithMessage()) {
   // }
@@ -321,18 +348,19 @@ function onMediaFileSelected(event) {
 
 var LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif?a';
 
-async function saveImageMessage(file) {
+async function saveImageMessage(user, user_team, file) {
   try {
     // 1 - We add a message with a loading icon that will get updated with the shared image.
     const messageRef = await addDoc(collection(getFirestore(), 'messages'), {
-      name: PERSON_NAME,
+      name: user,
       imageUrl: LOADING_IMAGE_URL,
       profilePicUrl: "http",
-      timestamp: serverTimestamp()
+      timestamp: serverTimestamp(),
+      team : user_team
     });
 
     // 2 - Upload the image to Cloud Storage.
-    const filePath = `${PERSON_NAME}/${messageRef.id}/${file.name}`;
+    const filePath = `${user}/${messageRef.id}/${file.name}`;
     const newImageRef = ref(getStorage(), filePath);
     const fileSnapshot = await uploadBytesResumable(newImageRef, file);
     

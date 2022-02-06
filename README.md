@@ -21,7 +21,7 @@ Thus Team Builder was born. A platform where members of hackathons have free wil
 ## Long description 
 
 ### About
-Team Builder was built based on the difficulties most of us coming across during hackathons mostly, finding a team. So, Team Builder aims to eradicate this problem and bring up people who have such trouble and let them find their better in a simple way as a connecting platform who finding teams.
+Team Builder was built based on the difficulties most of us coming across during hackathons mostly, finding a team. So, It aims to eradicate this problem and bring up people who have such trouble and let them find their better team members in a simple way as a connecting platform.
 
 ### Design
 Team Builder is designed with a highly responsive layout using HTML, CSS,JavaScript. The layout is very simple and user-friendly. We plan on improving our design in the future to fit the needs.

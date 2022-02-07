@@ -9,6 +9,19 @@
     <link href="/views/Team-Builder-ChatUI/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+
+    <div class="user" id="user" >
+     Team Name : <%= team %>
+      <br>
+     Username : <%= user %>
+    </div>
+
+    <script >
+
+      var user_team = '<%= team %>';
+      var user = '<%= user %>';  
+    </script>
+
      <section class="msger">
   <header class="msger-header">
     <div class="msger-header-title">
@@ -39,26 +52,7 @@
     </div> -->
     
     
-    <!-- below message we will requires 
-         later to add our messages to right side
-    -->
-    <div class="msg right-msg">
-       <!-- <div
-       class="msg-img"
-       style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)" >
-      </div> -->
 
-      <div class="msg-bubble">
-        <div class="msg-info">
-          <div class="msg-info-name">Sajad</div>
-          <div class="msg-info-time">12:46</div>
-        </div>
-
-        <div class="msg-text">
-          Hello! sup?
-        </div>
-      </div>
-    </div>
 
     <div id="messages">
     </div>
@@ -66,14 +60,23 @@
   </main>
 
 
-
+<div class="input_forms">
   <form class="msger-inputarea">
     <input type="text" class="msger-input" placeholder="Enter your message...">
-    <input id="mediaCapture" type="file" id="file1" name="image" accept="image/*" capture="camera" style="display:none"/>
-    <img class ="button-img" src="/views/Team-Builder-ChatUI/assets/attach.svg" id="upfile1" style="cursor:pointer" />
-    <button id="submitImage" type="submit" class="msger-send-btn">Send</button>
+    <button type="submit" class="msger-send-btn">Send</button>
   </form>
- <!-- <div>
+  <form id="image-form">
+    <input id="mediaCapture" type="file" id="file1" name="image" accept="image/*" capture="camera" style="display:none"/>
+    <img id="submitImage" class ="button-img" src="/views/Team-Builder-ChatUI/assets/attach.svg" id="upfile1" style="cursor:pointer" />
+  </form>
+</div>
+
+
+
+
+
+
+  <!-- <div>
   <form id="image-form" action="#">
     <input id="mediaCapture" type="file" accept="image/*" capture="camera"/>
       <button id="submitImage" title="Add an image"  class="btn">
@@ -81,11 +84,12 @@
           </div>
     </button>
   </form>
-</div> -->
+</div>  -->
 
 
 
 </section>
   </body>
+
  <script type="module" src="/views/Team-Builder-ChatUI/script.js"></script>
 </html>

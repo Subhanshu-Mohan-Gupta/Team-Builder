@@ -222,6 +222,9 @@ nav ul li svg {
   width: 100%;
   overflow-x: scroll;
 }
+.idea {
+  display: block;
+}
 
 .featured-ideas .ideas::-webkit-scrollbar {
   background: #49349c11;

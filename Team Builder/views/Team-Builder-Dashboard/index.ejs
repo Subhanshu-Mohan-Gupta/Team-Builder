@@ -39,15 +39,19 @@
         </span>
         <ul>
           <li class="active"><i data-feather="aperture"></i> Overview</li>
-          <a href="/views/Team-Builder-Dashboard/idea-form/index.html"> <li><i data-feather="trello"></i> add idea</li></a>
+
+
+         <a href="/views/Team-Builder-Dashboard/idea-form/index.html"> <li><i data-feather="trello"></i> add idea</li></a>
+
         </ul>
         <!--  -->
         <ul>
           <li><i data-feather="sliders"></i> Dashboard</li>
-         <form action="/myteam" method="post" id="teamform"> <li id="myteam"><i data-feather="message-square"></i> My Team</li>
+         <form action="/myteam" method="post" id="teamform"> <li id="myteam"><i data-feather="message-square"></i> My Team </li>
          </form>
-          <li><i data-feather="bell"></i> Notifications</li>
-          <li><i data-feather="user"></i> Account</li>
+         <li id="my_idea"><i data-feather="bell"></i> Notifications </li>
+         
+         <li><i data-feather="user"></i> Account</li>
         </ul>
       </nav>
     </aside>
@@ -73,8 +77,7 @@
         <!--  -->
         <h2>Ideas</h2>
         <div class="ideas" id="idea-list">
-     
-          <!--  -->
+           <!--  -->
 
 
 
@@ -103,6 +106,10 @@
     </div>
  
     <script>
+      function myIdea(idd) {
+// window.alert("id : "+idd);
+    window.location.href = "http://localhost:4000/views/Team-Builder-Dashboard/idea-info-page/idea-info.html?docid="+idd;
+      }
       feather.replace();
     </script>
   </body>

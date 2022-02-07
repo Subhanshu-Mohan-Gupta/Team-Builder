@@ -41,6 +41,7 @@ var profileListElement = document.getElementById("profile_list");
 var teamListElement = document.getElementById("team_list")
 var myTeamButtonElement = document.getElementById("myteam");
 
+  var idea_form_element = document.getElementById("ideaform");
 
 function toggleMenu() {
   menu.classList.toggle("active");
@@ -60,6 +61,8 @@ closeMenu.addEventListener("click", closeDrop);
 
 myTeamButtonElement.addEventListener("click", myTeam);
 var myFormElement = document.getElementById('teamform');
+
+
 
 /**
  * as we have not added
@@ -103,7 +106,7 @@ function createAndInsertIdea(id) {
 //// templates for elements
 // Template for Idea.
 var IDEA_TEMPLATE =
-          '<div class="idea pl1">'+
+          '<div class="idea" onclick="myIdea(this.getAttribute(`id`));">'+
             '<div class="img">'+
               '<img id="idea-image" alt="Thumbnail idea" />'+
             '</div>'+
@@ -270,6 +273,27 @@ function myTeam() {
  myFormElement.submit();
 }
 
+function myIdea(e) {
+
+window.alert("class : "+e);
+ 
+  // if(e.target != this){
+  //   var ev = new CustomEvent('click');
+  //    this.dispatchEvent(ev);
+  //    e.preventDefault();
+  //    e.preventPropagation();
+  //    window.alert("ok till function "+e.target.id);
+ 
+  // }
+  // else {
+  //   window.alert("ok till function "+e.target.id);
+ 
+  // }
+
+     
+  
+  //idea_form_element.submit();
+}
 
 const firebaseApp = initializeApp(getFirebaseConfig());
 const storage = getStorage(firebaseApp);
@@ -277,3 +301,8 @@ const storage = getStorage(firebaseApp);
 loadIdea();
 loadProfiles();
 loadTeams();
+// var idea_ligend_Eliment_list = document.querySelectorAll(".idea");
+// idea_ligend_Eliment_list.forEach(elemt => {
+  
+//   elemt.addEventListener("click", myIdea);
+// })

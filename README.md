@@ -1,3 +1,4 @@
+
 # Team-Builder 
 Find Your Better Team
 
@@ -33,7 +34,7 @@ One of the pages is the personal dashboard of a household using it.
 So we the team behind Team Builder are budding developers with so much aspiration to bring about a change in the society. When we came across this competition, we up-skilled ourselves along the way to provide a professional outcome.
 
 #### Tech Stacks used to build:
- > HTML, CSS, JavaScript, bootstrap, Firebase, node.js, express, express-session, cookie-parser
+ > HTML, CSS, JavaScript, bootstrap, Firebase, node.js, express.js, cookie-parser
 
 ### Installation
 
@@ -64,3 +65,5 @@ So we the team behind Team Builder are budding developers with so much aspiratio
 
 #### Now you're good to go !! 
 #### Have a nice day :)
+
+

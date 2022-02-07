@@ -106,7 +106,10 @@ var session;
 app.get('/',(req,res) => {
     session=req.session;
     if(session.userid){
-        res.render('Team-Builder-Dashboard/index', {root:__dirname});
+        res.render('Team-Builder-Dashboard/index', {
+            user : session.userid,
+            profile_url: users[session.ind].profileurl
+        });
     }else
     res.render('Team-Builder-Login/sign-in/signin',{root:__dirname});
 });
@@ -134,6 +137,8 @@ app.post("/signup", (req, res) => {
    }
   
 })
+
+
 
 
 
@@ -172,6 +177,17 @@ app.post("/myteam", (req, res) => {
         user : my_user
     });
    
+
+});
+
+
+app.post("/idea", (req,res) => {
+    console.log("ok till server");
+    res.render("Team-Builder-Dashboard/idea-info-page/idea-info", {
+        idea : req.body.idea
+    });
+
+
 });
 
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));

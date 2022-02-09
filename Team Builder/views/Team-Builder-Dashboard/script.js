@@ -95,7 +95,7 @@ function createAndInsertIdea(id) {
   const div = container.firstChild;
   div.setAttribute('id', id);
 
-    ideaListElement.appendChild(div);
+  ideaListElement.appendChild(div);
 
   // msgerChat.scrollTop += 600;
 
@@ -189,8 +189,6 @@ function displayProfile(id, profile_username, profile_url, profile_position) {
   profile_user_Element.textContent = profile_username;
   profile_position_Element.textContent = profile_position;
   profile_pic_Element.style.backgroundImage = "url('"+profile_url+"')";
-
-
 }
 
 function createAndInsertProfile(id) {
@@ -199,8 +197,7 @@ function createAndInsertProfile(id) {
   const div = container.firstChild;
   div.setAttribute('id', id);
 
-    profileListElement.appendChild(div);
-
+  profileListElement.appendChild(div);
 
   return div;
 }
@@ -269,7 +266,6 @@ function deleteTeam(id) {
 
 
 function myTeam() {
-//window.alert("success till here");
  myFormElement.submit();
 }
 
@@ -303,6 +299,5 @@ loadProfiles();
 loadTeams();
 // var idea_ligend_Eliment_list = document.querySelectorAll(".idea");
 // idea_ligend_Eliment_list.forEach(elemt => {
-  
 //   elemt.addEventListener("click", myIdea);
 // })

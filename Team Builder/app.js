@@ -186,6 +186,15 @@ app.post("/idea", (req,res) => {
     res.render("Team-Builder-Dashboard/idea-info-page/idea-info", {
         idea : req.body.idea
     });
+});
+
+
+app.post("/addIdea", (req, res) => {
+    
+    var my_user = users[session.ind].username;
+    res.render("Team-Builder-ChatUI/index", {
+        user : my_user
+    });
 
 
 });

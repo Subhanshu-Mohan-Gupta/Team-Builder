@@ -372,6 +372,7 @@ async function saveImageMessage(user, user_team, file) {
       imageUrl: publicImageUrl,
       storageUri: fileSnapshot.metadata.fullPath
     });
+
   } catch (error) {
     window.alert("image not uploaded : ");
     console.log(error);

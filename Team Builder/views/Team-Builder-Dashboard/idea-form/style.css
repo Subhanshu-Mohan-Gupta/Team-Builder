@@ -38,7 +38,7 @@
 	 color: #555;
 	 font-weight: 300;
 }
- input[type=button] {
+button {
 	 cursor: pointer;
 	 margin: 0;
 	 padding: 0.5em 2em;

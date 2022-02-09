@@ -39,10 +39,7 @@
         </span>
         <ul>
           <li class="active"><i data-feather="aperture"></i> Overview</li>
-
-
-         <a href="/views/Team-Builder-Dashboard/idea-form/index.html"> <li><i data-feather="trello"></i> add idea</li></a>
-
+        <li onclick="addIdea()" ><i data-feather="trello"></i> add idea</li>
         </ul>
         <!--  -->
         <ul>
@@ -106,9 +103,14 @@
     </div>
  
     <script>
+
+    function addIdea() {
+      window.location.href = "http://localhost:4000/views/Team-Builder-Dashboard/idea-form/index.html?user=<%= user %>";
+    }
+
       function myIdea(idd) {
 // window.alert("id : "+idd);
-    window.location.href = "http://localhost:4000/views/Team-Builder-Dashboard/idea-info-page/idea-info.html?docid="+idd;
+    window.location.href = "http://localhost:4000/views/Team-Builder-Dashboard/idea-info-page/idea-info.html?docid="+idd+"&user=<%= user %>";
       }
       feather.replace();
     </script>

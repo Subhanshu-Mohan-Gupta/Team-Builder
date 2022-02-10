@@ -177,7 +177,6 @@ app.post("/myteam", (req, res) => {
         user : my_user
     });
    
-
 });
 
 
@@ -195,7 +194,6 @@ app.post("/addIdea", (req, res) => {
     res.render("Team-Builder-ChatUI/index", {
         user : my_user
     });
-
 
 });
 

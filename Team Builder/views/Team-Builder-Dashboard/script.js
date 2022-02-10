@@ -3,6 +3,7 @@
  * firesore database.
  */
 
+
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js';
 
  import {
@@ -40,6 +41,8 @@ var ideaListElement = document.getElementById("idea-list");
 var profileListElement = document.getElementById("profile_list");
 var teamListElement = document.getElementById("team_list")
 var myTeamButtonElement = document.getElementById("myteam");
+var requestbuttonelement = document.getElementById("requests");
+var requestformelement = document.getElementById("requestform");
 
   var idea_form_element = document.getElementById("ideaform");
 
@@ -62,6 +65,10 @@ closeMenu.addEventListener("click", closeDrop);
 myTeamButtonElement.addEventListener("click", myTeam);
 var myFormElement = document.getElementById('teamform');
 
+requestbuttonelement.addEventListener("click", function(e) {
+  e.preventDefault();
+  requestformelement.submit();
+});
 
 
 /**
@@ -290,6 +297,7 @@ window.alert("class : "+e);
   
   //idea_form_element.submit();
 }
+
 
 const firebaseApp = initializeApp(getFirebaseConfig());
 const storage = getStorage(firebaseApp);

@@ -10,6 +10,7 @@
 	 margin: 3em auto;
 	 background-color: #f3efe7;
 	 padding: 2em;
+	 border-radius: 15px;
 }
  .section-form .intro {
 	 margin-bottom: 2em;
@@ -49,3 +50,14 @@ button {
 	 font-weight: 400;
 }
  
+
+.button-img{
+	width: 50px;
+	height: 40px;
+	background-color: green;
+	/* background-image: url("./views/Team-Builder-ChatUI/assets/attach.svg");
+	 */background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 50%;
+  }
+

@@ -1,0 +1,82 @@
+#img {
+    height: 100px;
+    width: 100px;
+    background-color: rgba(2, 0, 34, 0.954);
+    margin-left: 34%;
+    border-radius: 15px;
+    margin-top: 40px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+}
+
+body {
+    background-color: #1f1734;
+}
+
+#title {
+  color: whitesmoke;
+  font-size: 40px;
+  position: absolute;  
+  margin-left: 50%;
+  top: 13px;
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.author {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    font-size: 30px;
+
+}
+
+#description {
+    width: fit-content;
+    font-size: 30px;
+    color: rgb(255, 195, 122);
+    margin: 0 auto;
+}
+
+.back {
+  margin: 0 auto;
+  background-color: black;
+  width: 600px;
+  padding: 20px;
+  margin-top: 7%;
+  border-radius: 15px;
+}
+
+.head {
+    color: rgb(255, 195, 122);
+    font-size: 30px; 
+}
+
+
+#join_btn {
+   margin-left: 47%;
+   margin-top: 30px;
+   height: 40px;
+   width: 140px; 
+   font-size: 30px;
+   color: white;
+   border-radius: 15px;
+   box-shadow: 10px 10px 10px black;
+   background-color: rgb(74, 44, 113);
+}
+
+#back {
+    height: 40px;
+    width: 200px;
+    background-color: rgb(74, 44, 113);
+    border-radius: 15px;
+    margin-left: 80%;
+    margin-top: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    position: absolute;
+    box-shadow: 10px 10px 10px black;
+}

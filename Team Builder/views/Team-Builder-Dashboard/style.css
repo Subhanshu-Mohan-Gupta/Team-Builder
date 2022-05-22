@@ -54,8 +54,9 @@ aside .profile .img {
   height: 60px;
   border-radius: 4px;
   overflow: hidden;
-  background: url(./assets/logo.svg) no-repeat 55% 50%;
-  background-size: 100%;
+  background-image: url(./assets/logo.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
   margin-right: 10px;
   cursor: pointer;
 }
@@ -201,6 +202,23 @@ nav ul li svg {
   color: var(--text-primary);
 }
 
+.profile_container {
+
+  width: fit-content;
+  margin-left: 100%;
+}
+
+.name {
+  margin-top: 10px;
+  color: white;
+}
+
+#profile {
+  display: block;
+  border-radius: 15px;
+  right: 0%;
+}
+
 /* =============== */
 /* =============== */
 /* =============== */
@@ -289,6 +307,19 @@ nav ul li svg {
 
 .views .profile-views .container-views {
   margin-top: 15px;
+  height: 350px;
+  overflow-y: scroll;
+}
+
+.views .profile-views .container-views::-webkit-scrollbar {
+  width: 10px;
+  background-color: #1f1734;
+}
+
+.views .profile-views .container-views::-webkit-scrollbar-thumb {
+  background: var(--scroll);
+  width: 10px;
+  border-radius: 10px;
 }
 
 .views .profile-views .view:not(:first-child) {
@@ -320,7 +351,7 @@ nav ul li svg {
 
 .views .profile-views .v2 .img {
   background: url(./assets/brasscobra.png) no-repeat 50% 5%;
-  background-size: 120%;
+  background-size: cover;
 }
 
 .views .profile-views .v3 .img {

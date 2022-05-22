@@ -1,0 +1,39 @@
+
+body {
+    font-size: 25px;
+    background-color: #1f1734;
+}
+
+p {
+    font-size: 40px;
+    color: whitesmoke;
+}
+
+#accept  {
+    background-color: green;
+    height: 30px;
+    width: 90px;
+    color: white;
+}
+#decline {
+    background-color: green;
+    height: 30px;
+    width: 90px;
+    color: white;
+}
+
+.request {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    width: max-content;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    padding: 10px;
+}
+
+.user {
+  font-size: 30px;
+  color: white;
+}

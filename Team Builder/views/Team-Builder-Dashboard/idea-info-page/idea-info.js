@@ -6,7 +6,6 @@ import {
     collection,
     addDoc,
     doc,
-    getDoc,
     onSnapshot,
   } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js';
 
@@ -32,7 +31,7 @@ import {
     
  
     const docref = doc(getFirestore(), 'ideas', doc_id);
-    // const docSnap = await getDoc(docref);
+  
 
     try {
         const getdoc = onSnapshot(
@@ -42,12 +41,16 @@ import {
               img_elemetn.setAttribute("src",data.imgurl);
               title_element.textContent = data.title;
               admin_Element.textContent = data.admin;
+              var admin = data.admin;
               const urlparm = new URLSearchParams(window.location.search);
               const user = urlparm.get("user");
-          
+              var idea_id = urlparm.get("docid"); 
+
               if(user == data.admin) {
                   join_element.style.display="none";
               }
+
+              
 
               join_element.addEventListener("click", function() {
 
@@ -55,25 +58,25 @@ import {
                 * adding request 
                 * in firebase
                 */
-                 if(confirm(" do You really want to update send this request?")){
+                 if(confirm(" do You really want to send this request?"+data.admin+" "+user)){
                     try {
-                        await addDoc(collection(getFirestore(), 'requests'), {
+                         addDoc(collection(getFirestore(), 'requests'), {
                           sender: user,
                           receiver: admin,
-                          'idea-id': h
+                          idea_id: idea_id,
+                          status: "pending"
                         });
                       }
                       catch(error) {
-                        window.alert("no able to send request "+error);
+                        window.alert("not able to send request "+error);
                       }
                  }
 
 
 
-                //  window.location.replace("http://localhost:4000/views/Team-Builder-Dashboard/requests/request-page.html");
-              });
+                });
 
-            })
+            });
     }
     catch(e) {
         console.log(e);
@@ -91,4 +94,3 @@ import {
 
 const firebaseApp = initializeApp(getFirebaseConfig());
 loadIdea();
-//checkIdea();

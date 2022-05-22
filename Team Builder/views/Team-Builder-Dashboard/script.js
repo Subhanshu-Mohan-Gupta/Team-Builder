@@ -9,22 +9,18 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase
  import {
   getFirestore,
   collection,
-  // addDoc,
   query,
-  // orderBy,
   limit,
   onSnapshot,
-  // setDoc,
-  // updateDoc,
-  // doc,
-  // serverTimestamp,
+    updateDoc,
+   doc,
 } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js';
 
 import {
   getStorage,
-  // ref,
-  // uploadBytesResumable,
-  // getDownloadURL,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
 } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-storage.js';
 
 
@@ -43,8 +39,11 @@ var teamListElement = document.getElementById("team_list")
 var myTeamButtonElement = document.getElementById("myteam");
 var requestbuttonelement = document.getElementById("requests");
 var requestformelement = document.getElementById("requestform");
+var profileCaptureElement = document.getElementById('profile-input');
+var profileFormElement = document.getElementById("profile-form");
 
-  var idea_form_element = document.getElementById("ideaform");
+var idea_form_element = document.getElementById("ideaform");
+
 
 function toggleMenu() {
   menu.classList.toggle("active");
@@ -76,7 +75,7 @@ requestbuttonelement.addEventListener("click", function(e) {
  * time stamp in the ideas 
  * it is removed for now
  */
-//orderBy('timestamp', 'desc'),
+
 
 function loadIdea() {
   // Create the query to load the last 12 messages and listen for new ones.
@@ -104,7 +103,6 @@ function createAndInsertIdea(id) {
 
   ideaListElement.appendChild(div);
 
-  // msgerChat.scrollTop += 600;
 
   return div;
 }
@@ -128,13 +126,12 @@ var PROFILE_TEMPLATE =
              '<div class="img" id="profile_pic"></div>'+
            '<div class="info">'+
              '<p id="profile_name"></p>'+
-          '<span id="last login">1 day ago</span>'+
              '</div>'+
             '<span id="position"></span>'+
             '</div>';
 
 var TEAMS_TEMPLATE = 
-        '<div class="team t1">'+
+        '<div class="team" onclick="showTeam(this.getAttribute(`id`))">'+
         '<div class="img" id="team_logo"></div>'+
         '<p id="team_name"></p>'+
         '<span id="project_idea">Project Idea/Description</span>'+
@@ -272,6 +269,8 @@ function deleteTeam(id) {
 
 
 
+
+
 function myTeam() {
  myFormElement.submit();
 }
@@ -280,23 +279,58 @@ function myIdea(e) {
 
 window.alert("class : "+e);
  
-  // if(e.target != this){
-  //   var ev = new CustomEvent('click');
-  //    this.dispatchEvent(ev);
-  //    e.preventDefault();
-  //    e.preventPropagation();
-  //    window.alert("ok till function "+e.target.id);
- 
-  // }
-  // else {
-  //   window.alert("ok till function "+e.target.id);
- 
-  // }
 
-     
-  
-  //idea_form_element.submit();
 }
+
+
+
+
+
+async function updateProfileImage(user, file){
+    // 2 - Upload the image to Cloud Storage.
+    const filePath = `${user}/profile/${file.name}`;
+    const newImageRef = ref(getStorage(), filePath);
+    const fileSnapshot = await uploadBytesResumable(newImageRef, file);
+    
+    // 3 - Generate a public URL for the file.
+    const publicImageUrl = await getDownloadURL(newImageRef);
+
+    // 4 - Update the profileurl with image’s URL.
+    await updateDoc(doc(getFirestore(), "users", user),{
+      profileurl: publicImageUrl
+       });
+
+       console.log("done");
+}
+
+
+
+function onMediaFileSelected(event) {
+  event.preventDefault();
+  var file = event.target.files[0];
+
+  // Clear the selection in the file picker input.
+  profileFormElement.reset();
+
+  // Check if the file is an image.
+  if (!file.type.match('image.*')) {
+    var data = {
+      message: 'You can only share images',
+      timeout: 2000
+    };
+    signInSnackbarElement.MaterialSnackbar.showSnackbar(data);
+    return;
+  }
+  updateProfileImage(user, file);
+
+}
+
+profileCaptureElement.addEventListener('change', onMediaFileSelected);
+
+
+
+
+
 
 
 const firebaseApp = initializeApp(getFirebaseConfig());
@@ -305,7 +339,3 @@ const storage = getStorage(firebaseApp);
 loadIdea();
 loadProfiles();
 loadTeams();
-// var idea_ligend_Eliment_list = document.querySelectorAll(".idea");
-// idea_ligend_Eliment_list.forEach(elemt => {
-//   elemt.addEventListener("click", myIdea);
-// })

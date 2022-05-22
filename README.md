@@ -1,5 +1,5 @@
 
-# Team-Builder                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; (Ongoing)
+# Team-Builder                 
 Find Your Better Team
 
 <img src="https://user-images.githubusercontent.com/72182858/150678144-1b892edd-3d9d-48f1-98ad-b2ec4f334698.svg" width="100" height="100">

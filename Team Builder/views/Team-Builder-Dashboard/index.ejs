@@ -8,18 +8,25 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="/views/Team-Builder-Dashboard/style.css" />
   </head>
-  <body>
-
+  <body >
+    <script>
+      var user = '<%= user %>';  
+    </script>
     <aside>
      
-   
       <div class="profile">
         <div class="img"></div>
         <div class="data">
           <p>Team Builder</p>
           <span>
-            Edit profile
-            <i data-feather="settings"></i>
+            <form id="profile-form">
+              <label for="profile-input">
+                Change profile pic
+                <input  id="profile-input" type="file" name="image" accept="image/*" capture="camera" style="display: none;"/>
+                <i data-feather="settings"></i>
+              </label>
+            </form>
+            
           </span>
         </div>
       </div>
@@ -40,35 +47,34 @@
         <ul>
           <li class="active"><i data-feather="aperture"></i> Overview</li>
         <li onclick="addIdea()" ><i data-feather="trello"></i> add idea</li>
-        </ul>
-        <!--  -->
-        <ul>
-          <li><i data-feather="sliders"></i> Dashboard</li>
-         <form action="/myteam" method="post" id="teamform"> <li id="myteam"><i data-feather="message-square"></i> My Team </li>
+       
+              <form action="/myteam" method="post" id="teamform"> <li id="myteam"><i data-feather="message-square"></i> My Team </li>
          </form>
-         <li id="my_idea"><i data-feather="bell"></i> Notifications </li>
-         
-         <li><i data-feather="user"></i> Account</li>
-        </ul>
+         <form action="/requests" method="post" id="requestform"> <li id="requests"><i data-feather="bell"></i> requests  </li>
+         </form>
+         </ul>
       </nav>
     </aside>
 
     <div class="container">
       <!--  -->
-      <div class="search">
-        <input
-          type="search"
-          name="search"
-          id="search"
-          placeholder="Search for teams, ideas, and tech-stacks"
-        />
-        <label for="search"><i data-feather="search"></i></label>
-      </div>
+ 
       <!-- 
       this user name will be rendered 
       after login -->
-      <img height="70px" width="70px" src="<%=profile_url%>">
-      <%= user %>
+      <div class="profile_container">
+        <img id="profile" height="70px" width="70px" src="<%=profile_url%>">
+        <div class="name">
+          <%= user %>
+        </div>
+      </div>
+      
+      
+
+      <!-- updated profile -->
+       
+
+
 
       <div class="featured-ideas" >
         <!--  -->
@@ -84,7 +90,7 @@
       <div class="views">
         <div class="profile-views">
           <!--  -->
-          <h2>Profile Views</h2>
+          <h2>All Participants</h2>
           <div class="container-views" id="profile_list">
            
           </div>
@@ -109,9 +115,13 @@
     }
 
       function myIdea(idd) {
-// window.alert("id : "+idd);
     window.location.href = "http://localhost:4000/views/Team-Builder-Dashboard/idea-info-page/idea-info.html?docid="+idd+"&user=<%= user %>";
       }
+
+      window.showTeam = function(id){
+  window.location.href = "http://localhost:4000/views/Team-Builder-Dashboard/team-info-page/team-info-page.html?docid="+id+"&user=<%= user %>";
+}
+
       feather.replace();
     </script>
   </body>

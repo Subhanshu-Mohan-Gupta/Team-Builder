@@ -23,8 +23,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: var(--body-bg);
   font-family: Helvetica, sans-serif;
+  background-color: #1f1734;
 }
 
 #image-form {
@@ -190,6 +190,41 @@ body {
   background-color: #fcfcfe;
   background-image: url("assets/u2.jpg");
 }
+
+.members {
+  height: fit-content;
+  width: 300px;
+  position: absolute;
+  margin-left: 80%;
+  background-color: rgb(9, 50, 116);
+  top: 200px;
+  border-radius: 15px;
+  color: whitesmoke;
+}
+
+.heading {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 30px;
+}
+
+.list {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 25px;
+}
+
+
+.user {
+  height: fit-content;
+  width: 300px;
+  padding: 20px;
+  background-color: rgb(9, 50, 116);
+  border-radius: 15px;
+  color: whitesmoke;
+  font-size: 25px;
+}
+
 
 /** upload button **/
 

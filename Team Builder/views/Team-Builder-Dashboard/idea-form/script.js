@@ -5,15 +5,7 @@ import {
     getFirestore,
     collection,
     addDoc,
-    // query,
-    // orderBy,
-    // limit,
-    // onSnapshot,
-   //  setDoc,
     updateDoc,
-   //  doc,
-    // serverTimestamp,
-    // where,
   } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js';
 
 
@@ -105,7 +97,4 @@ async function addIdea(title, description, logo_image) {
 const firebaseApp = initializeApp(getFirebaseConfig());
 const storage = getStorage(firebaseApp);
 
-// function loadData() {
-//     const urlparm = new URLSearchParams(window.location.search);
-//     const user = urlparm.get("user");
-// }
+

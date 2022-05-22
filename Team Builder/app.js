@@ -15,8 +15,10 @@ fire.initializeApp({
 const express = require('express');
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
+const multer = require('multer');
+const storage = multer.memoryStorage()
+const upload = multer({ storage: storage})
 
-const path = require('path');
 
 const router = express.Router();
 
@@ -103,28 +105,28 @@ var session;
 
 
 
-app.get('/',(req,res) => {
-    session=req.session;
-    if(session.userid){
-        res.render('Team-Builder-Dashboard/index', {
-            user : session.userid,
-            profile_url: users[session.ind].profileurl
-        });
-    }else
-    res.render('Team-Builder-Login/sign-in/signin',{root:__dirname});
-});
 
-app.post("/signup", (req, res) => {
+
+app.post("/signup", upload.single('logo_input'), (req, res) => {
+
+
 
    try {
+
+    /**
+     * adding user to
+     * firestore
+     */
     var userdata = {
         username : req.body.username,
         email : req.body.email,
-        password : req.body.pass
+        password : req.body.pass,
+        position : req.body.position,
+        profileurl:"https://firebasestorage.googleapis.com/v0/b/local-dev-chat.appspot.com/o/common%2Fprofile.png?alt=media&token=170be037-d334-4d8d-97f3-205e7af049f4"
     }
 
     db.collection("users").doc(req.body.username).set(userdata).then(() => {
-    console.log("user added successfully with " + userdata);
+    
     });
 
     loaddbdata();
@@ -139,7 +141,16 @@ app.post("/signup", (req, res) => {
 })
 
 
-
+app.get('/',(req,res) => {
+    session=req.session;
+    if(session.userid){
+        res.render('Team-Builder-Dashboard/index', {
+            user : session.userid,
+            profile_url: users[session.ind].profileurl
+        });
+    }else
+    res.render('Team-Builder-Login/sign-in/signin',{root:__dirname});
+});
 
 
 app.post("/dashboard", (req, res) => {
@@ -169,15 +180,12 @@ app.post("/dashboard", (req, res) => {
 
 
 app.post("/myteam", (req, res) => {
-    console.log("reached at the server ");
     var my_team = users[session.ind].team;
     var my_user = users[session.ind].username;
     res.render("Team-Builder-ChatUI/index", {
         team : my_team,
         user : my_user
     });
-   
-
 });
 
 
@@ -196,7 +204,14 @@ app.post("/addIdea", (req, res) => {
         user : my_user
     });
 
-
 });
+
+
+
+app.post("/requests", (req, res) => {
+    var my_user = users[session.ind].username;
+    res.redirect("./views/Team-Builder-Dashboard/requests/request-page.html?user="+my_user);
+    })
+
 
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));

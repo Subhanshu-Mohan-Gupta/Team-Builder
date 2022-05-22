@@ -3,8 +3,10 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase
 
 import {
     getFirestore,
+    collection,
+    addDoc,
     doc,
-    getDoc,
+    onSnapshot,
   } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js';
 
   import { getFirebaseConfig } from '/views/firebase-config.js';
@@ -27,32 +29,63 @@ import {
     const doc_id = urlparm.get("docid");
 
     
-
+ 
     const docref = doc(getFirestore(), 'ideas', doc_id);
-    const docSnap = await getDoc(docref);
-    
-    // if(docSnap.exists()) {
-          var data = docSnap.data();
-          description_Element.textContent = data.description;
-          img_elemetn.setAttribute("src",data.imgurl);
-          title_element.textContent = data.title;
-          admin_Element.textContent = data.admin;
-          window.adminr = data.admin;
-    //     }
-    // else {
-    //     onclose.log("error getting data");
-    // }
-}
+  
 
-function checkIdea() {
-    const urlparm = new URLSearchParams(window.location.search);
-    const user = urlparm.get("user");
-    console.log( window.adminr);
-    if(user == admin) {
-        join_element.style.display="none";
+    try {
+        const getdoc = onSnapshot(
+            docref, (docu) => {
+                 var data = docu.data();
+              description_Element.textContent = data.description;
+              img_elemetn.setAttribute("src",data.imgurl);
+              title_element.textContent = data.title;
+              admin_Element.textContent = data.admin;
+              var admin = data.admin;
+              const urlparm = new URLSearchParams(window.location.search);
+              const user = urlparm.get("user");
+              var idea_id = urlparm.get("docid"); 
+
+              if(user == data.admin) {
+                  join_element.style.display="none";
+              }
+
+              
+
+              join_element.addEventListener("click", function() {
+
+               /**
+                * adding request 
+                * in firebase
+                */
+                 if(confirm(" do You really want to send this request?"+data.admin+" "+user)){
+                    try {
+                         addDoc(collection(getFirestore(), 'requests'), {
+                          sender: user,
+                          receiver: admin,
+                          idea_id: idea_id,
+                          status: "pending"
+                        });
+                      }
+                      catch(error) {
+                        window.alert("not able to send request "+error);
+                      }
+                 }
+
+
+
+                });
+
+            });
     }
-
+    catch(e) {
+        console.log(e);
+    }
+   
+ 
 }
+
+
 
 
 
@@ -61,4 +94,3 @@ function checkIdea() {
 
 const firebaseApp = initializeApp(getFirebaseConfig());
 loadIdea();
-checkIdea();

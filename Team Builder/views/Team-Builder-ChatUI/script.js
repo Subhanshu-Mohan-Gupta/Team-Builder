@@ -1,17 +1,4 @@
-/**
- * these are imports 
- * some may be unused but 
- * we will require them later
- * 
- */
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js';
-//  import {
-//    getAuth,
-//    onAuthStateChanged,
-//   //  GoogleAuthProvider,
-//   //  signInWithPopup,
-//   //  signOut,
-//  } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js';
  import {
    getFirestore,
    collection,
@@ -20,9 +7,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase
    orderBy,
    limit,
    onSnapshot,
-  //  setDoc,
    updateDoc,
-  //  doc,
    serverTimestamp,
    where,
  } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js';
@@ -32,12 +17,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase
    uploadBytesResumable,
    getDownloadURL,
  } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-storage.js';
-//  import {
-//    getMessaging,
-//    getToken,
-//    onMessage
-//  } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-messaging.js'; 
-//  import { getPerformance } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-performance.js';
+
 
  import { getFirebaseConfig } from '/views/firebase-config.js';
  
@@ -54,22 +34,13 @@ const messageInputElement = get(".msger-input");
 const msgerChat = get(".msger-chat");
 var messageListElement = document.getElementById('messages');
 var imageButtonElement = document.getElementById('submitImage');
- var imageFormElement = document.getElementById('image-form');
- var mediaCaptureElement = document.getElementById('mediaCapture');
+var imageFormElement = document.getElementById('image-form');
+var mediaCaptureElement = document.getElementById('mediaCapture');
+var memberListElement = get(".list");
 
 
 
-/**
- * 
- * removed bot as it is not needed
- * 
- */
 
-const BOT_MSGS = ["Hi, how are you?", "Ohh... I can't understand what you trying to say. Sorry!", "I like to play games... But I don't know how to play!", "Sorry if my answers are not relevant. :))", "I feel sleepy! :("]; 
-const BOT_IMG = "assets/logo.svg";
-const PERSON_IMG = "assets/logo.svg";
-const BOT_NAME = "Person-2";
-const PERSON_NAME = "Person-1";
 messageFormElement.addEventListener("submit", event => {
   event.preventDefault();
  
@@ -81,18 +52,7 @@ messageFormElement.addEventListener("submit", event => {
    * 
   */
 
-  /**
-   * following function call is 
-   * commented as we dont need it
-   * right now but we will need it 
-   * later on for appending our
-   * message right side 
-   *  
-   */
-   //appendMessage(PERSON_NAME, PERSON_IMG, "right", messageInputElement.value);
 
-
-  ///working stuff
   if(messageInputElement.value) {
     saveMessage(user,messageInputElement.value, user_team);
     messageInputElement.value = "";
@@ -105,12 +65,7 @@ messageFormElement.addEventListener("submit", event => {
 });
 
 
-/**
- * for now every message is being 
- * sent with name Naresh as 
- * we have not implemented 
- * sign in part and dont know the user
- */
+
 async function saveMessage(my_user,messageText, team) {
   // Add a new message entry to the Firebase database.
   try {
@@ -128,7 +83,7 @@ async function saveMessage(my_user,messageText, team) {
 }
 
 function appendMessage(name, img, side, text) {
-  //   Simple solution for small apps
+
   const msgHTML = `
     <div class="msg ${side}-msg">
       <div class="msg-img" style="background-image: url(${img})"></div>
@@ -149,21 +104,13 @@ function appendMessage(name, img, side, text) {
 
 
 
-////not in use
-function botResponse() {
-  const r = random(0, BOT_MSGS.length - 1);
-  const msgText = BOT_MSGS[r];
-  const delay = msgText.split(" ").length * 100;
-  setTimeout(() => {
-    appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
-  }, delay);
-} // Utils
 
 
-
+///function for querry selector
 function get(selector, root = document) {
   return root.querySelector(selector);
 }
+
 
 function formatDate(date) {
   const h = "0" + date.getHours();
@@ -235,6 +182,44 @@ function loadMessages() {
  '</div>';
 
 
+
+
+  /**
+   * two methods for loading 
+   * and inserting messages
+   */
+  function createAndInsertMember(name){
+  
+    const container = document.createElement('li');
+  
+    memberListElement.appendChild(container)
+
+    container.textContent=name;
+  }
+
+function loadMembers() {
+  const recentMemberQuery = query(collection(getFirestore(), 'users'), where("team", "==", user_team));
+
+  // Start listening to the query.
+  onSnapshot(recentMemberQuery, function(snapshot) {
+    snapshot.docChanges().forEach(function(change) {
+      if (change.type === 'removed') {
+        //deleteMessage(change.doc.id);
+      } else {
+        var member = change.doc.data();
+        createAndInsertMember(member.username);
+      }
+    });
+  });
+}
+
+
+
+ /**
+  * two methods for loading
+  * and inserting messages
+  */
+
 function createAndInsertMessage(user, name, id, timestamp) {
   const container = document.createElement('div');
  
@@ -288,10 +273,6 @@ function createAndInsertMessage(user, name, id, timestamp) {
 function displayMessage(id, timestamp, name, text, picUrl, imageUrl) {
   var div = document.getElementById(id) || createAndInsertMessage(user, name, id, timestamp);
 
-  // profile picture
-  // if (picUrl) {
-  //   div.querySelector('.pic').style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(picUrl) + ')';
-  // }
 
   div.querySelector('.msg-info-name').textContent = name;
   var messageElement = div.querySelector('.msg-text');
@@ -341,9 +322,7 @@ function onMediaFileSelected(event) {
     return;
   }
   saveImageMessage(user, user_team, file);
-  // Check if the user is signed-in
-  // if (checkSignedInWithMessage()) {
-  // }
+
 }
 
 var LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif?a';
@@ -392,3 +371,4 @@ const firebaseApp = initializeApp(getFirebaseConfig());
 const storage = getStorage(firebaseApp);
 
 loadMessages();
+loadMembers()

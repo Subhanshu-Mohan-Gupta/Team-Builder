@@ -1,0 +1,54 @@
+body {
+    background-color: #1f1734;
+}
+
+#team_name {
+    color: whitesmoke;
+    font-size: 40px;
+    position: absolute;  
+    margin-left: 43%;
+    top: 13px;
+    background-color: black;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.back {
+    margin: 0 auto;
+    background-color: black;
+    width: 600px;
+    padding: 20px;
+    margin-top: 10%;
+    border-radius: 15px;
+  }
+ 
+.leader {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 30px;
+    color: white;
+}  
+
+.description {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 30px;
+    color: white;
+}
+
+.members {
+    font-size: 30px;
+    color: white;
+}
+
+button {
+ height: 40px;
+ width: 200px;
+ background-color: rgb(74, 44, 113);
+ border-radius: 15px;
+ margin-left: 80%;
+ margin-top: 30px;
+ color: rgb(255, 255, 255);
+ font-size: 20px;
+ box-shadow: 10px 10px 10px black;
+}

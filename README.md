@@ -38,6 +38,13 @@ So we the team behind Team Builder are budding developers with so much aspiratio
 
 ### Installation
 
+  #### Docker 
+  ```bash  
+  docker pull nareshchandanbatve/team_builder:1.0  
+  ```
+
+
+  #### Manually
   1. Download node.js from `` https://nodejs.org/en/download/ ``
   2. Open vs-code/cmd/powershell and in the new terminal run 
    ```bash 

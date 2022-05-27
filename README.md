@@ -57,29 +57,24 @@ So we the team behind Team Builder are budding developers with so much aspiratio
    ```bash 
    git clone https://github.com/MLH-LHD-Build-2022/Team-Builder
    ```
-  3. run <br>
-   ```bash
-   cd 'Team Builder'
-   ```
    
-  4. run <br>
+ 3. run <br>
    ```bash
    npm install express
    ```
-  5. run <br>
+  4. run <br>
    ```bash
    npm install firebase cookie-parser express-session
    ```   
-  6. run <br>
+  5. run <br>
    ```bash
    node index.js
    ```
-  7. Open any browser and paste this `` http://localhost:4000/`` <br>
+  6. Open any browser and paste this `` http://localhost:4000/`` <br>
 
 
 #### Now you're good to go !! 
-#### Have a nice day :)
 
 
 ### Contributing
-team-builder is an openSource project, You can open issues, add new features, fix the bug and make contributions to this project
+team-builder is an openSource project, You can open issues, add new features, fix the bug and make contributions to this project.

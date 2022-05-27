@@ -39,8 +39,15 @@ So we the team behind Team Builder are budding developers with so much aspiratio
 ### Installation
 
   #### Docker 
+  
+  ##### 1) Pull the image
   ```bash  
   docker pull nareshchandanbatve/team_builder:1.0  
+  ```
+  
+  ##### 2) Run the image
+  ```bash  
+  docker run -d -p 4000:4000 nareshchandanbatve/team_builder:1.0  
   ```
 
 
@@ -65,7 +72,7 @@ So we the team behind Team Builder are budding developers with so much aspiratio
    ```   
   6. run <br>
    ```bash
-   node app.js
+   node index.js
    ```
   7. Open any browser and paste this `` http://localhost:4000/`` <br>
 
@@ -74,3 +81,5 @@ So we the team behind Team Builder are budding developers with so much aspiratio
 #### Have a nice day :)
 
 
+### Contributing
+team-builder is an openSource project, You can open issues, add new features, fix the bug and make contributions to this project

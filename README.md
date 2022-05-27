@@ -77,4 +77,4 @@ So we the team behind Team Builder are budding developers with so much aspiratio
 
 
 ### Contributing
-team-builder is an openSource project, You can open issues, add new features, fix the bug and make contributions to this project.
+team-builder is an openSource project, feel free to make contributions to this project by opening issues, adding new features, fixing the bug.

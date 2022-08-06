@@ -56,11 +56,19 @@
                 <div class="form-row flex-row">
                     <button type="submit">Register</button>
                     <span>or</span>
-                    <a href="./sign-in/index.html">Sign in</a>
+                
                 </div>
             </form>
+            <form id="signin" action="/" method="get" onclick="submitf()"><a href="#">Sign in</a></form>
         </div>
     </main>
+
+    <script>
+        function submitf() {
+            var form = document.getElementById("signin");
+            form.submit();
+        }
+    </script>
 </body>
 
 </html>

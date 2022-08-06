@@ -7,15 +7,22 @@ Find Your Better Team
 ## Contents
 - [Submission or project name](#team-builder)
   - [Contents](#contents)
+  - [Team Members](#team-members)
   - [Short Description](#short-description)
-  - [Demo video](#demo-video)
+  - [Demo video](#demo-video-old)
   - [Long description](#long-description)
+
+
+## Team Members
+1. Shubhanshu Gupta
+2. Vidhya Lakshmi
+3. Naresh Chandanbatve
 
 ## Short Description 
 Hackathons are a great way to meet new people, but we can choose our right teammates in a rush. No right? We too faced this problem while selecting the teammates. 
 Thus Team Builder was born. A platform where members of hackathons have free will and options to choose from, they could even contact the original idea owner. It is better for both the idea owner and the participant as discussion always result in a better product.
 
-## Demo video (Old)
+## Demo video (old)
 [![Watch the video](https://user-images.githubusercontent.com/72182858/150680306-e6e63dfe-b048-44cd-adc5-14b1a4524622.png)](https://youtu.be/Kbz8FF8_Hcc)
 
 

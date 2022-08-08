@@ -52,3 +52,16 @@ button {
  font-size: 20px;
  box-shadow: 10px 10px 10px black;
 }
+
+#back {
+    height: 40px;
+    width: 200px;
+    background-color: rgb(74, 44, 113);
+    border-radius: 15px;
+    margin-left: 80%;
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    position: absolute;
+    box-shadow: 10px 10px 10px black;
+}

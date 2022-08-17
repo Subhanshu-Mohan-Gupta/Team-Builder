@@ -24,8 +24,10 @@ Thus Team Builder was born. A platform where members of hackathons have free wil
 
 ## Demo video 
 <!-- old video link [![Watch the video](https://user-images.githubusercontent.com/72182858/150680306-e6e63dfe-b048-44cd-adc5-14b1a4524622.png)](https://youtu.be/Kbz8FF8_Hcc) -->
-
+### video-1
 [![Watch the video](https://user-images.githubusercontent.com/72182858/150680306-e6e63dfe-b048-44cd-adc5-14b1a4524622.png)](https://youtu.be/P5p4GlPjTIY)
+### video-2
+[![Watch the video](https://user-images.githubusercontent.com/72182858/150680306-e6e63dfe-b048-44cd-adc5-14b1a4524622.png)](https://youtu.be/5Mea74U2VG0)
 
 
 ## Long description 

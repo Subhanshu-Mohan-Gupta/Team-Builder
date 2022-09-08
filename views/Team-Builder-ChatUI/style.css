@@ -245,6 +245,19 @@ body {
   border-radius: 50%;
 }
 
+#back {
+  height: 40px;
+  width: 200px;
+  background-color: rgb(74, 44, 113);
+  border-radius: 15px;
+  margin-left: 80%;
+  top: 120px;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  position: absolute;
+  box-shadow: 10px 10px 10px black;
+}
+
 @media screen {
   .msger {
     width: calc(100% - 20px);

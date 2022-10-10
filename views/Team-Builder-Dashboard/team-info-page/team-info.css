@@ -1,5 +1,24 @@
 body {
-    background-color: #1f1734;
+    /* background-color: #1f1734; */
+    background: rgb(26, 188, 156);
+	background: -moz-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+	background: linear-gradient(135deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
 }
 
 #team_name {
@@ -10,16 +29,28 @@ body {
     top: 13px;
     background-color: black;
     padding: 20px;
-    border-radius: 15px;
+    border: 5px white solid;
+
+    border-radius: 10px;
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
 }
 
 .back {
     margin: 0 auto;
-    background-color: black;
+    background-image:url("https://wallpapercave.com/wp/wp1909399.png");
     width: 600px;
     padding: 20px;
     margin-top: 10%;
     border-radius: 15px;
+    width:auto;
+    max-width:70%;
+    box-shadow: 10px 10px 10px black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+
   }
  
 .leader {
@@ -59,9 +90,12 @@ button {
     background-color: rgb(74, 44, 113);
     border-radius: 15px;
     margin-left: 80%;
-    margin-top: 0px;
+    margin-top: 30px;
+    margin:auto;
     color: rgb(255, 255, 255);
     font-size: 20px;
     position: absolute;
     box-shadow: 10px 10px 10px black;
+    width: auto;
+    align-content: center;
 }

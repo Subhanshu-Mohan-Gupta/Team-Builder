@@ -9,27 +9,98 @@
     <title>Team Builder</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
 </head>
 
 <body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Register</h4>
+            </div>
+            <div class="modal-body">
+                
+                    <form action="/signup" class="form" method="post">
+                        <div class="form-row">
+                            <label for="username">Username</label>
+                            <input id="username" name="username" placeholder="Your username goes here..." type="text" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" placeholder="Email..." type="email" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="pass">Password</label>
+                            <input id="pass" name="pass" placeholder="Password" type="password" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="re-pass">Repeat password</label>
+                            <input id="re-pass" name="re-pass" placeholder="Repeat password" type="password" required>
+                        </div>
+        
+                        <div class="form-row">
+                            <label for="position">Your Position</label>
+                            <input id="position" name="position" placeholder="Your current position" type="text" required>
+                        </div>
+        
+                        <div class="form-row flex-row">
+                            <button type="submit">Register</button>
+                            <span>or</span>
+                        
+                        </div>
+                    </form>
+                    <form id="sign" action="/" method="get" onclick="submitf()"><a href="#">Sign in</a></form>
+                </div>
+              
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+
     <div class="logo">
       <div class="logo-text">  
           <p> <br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Team Builder </p>
       </div>
     </div>
     <br><br>
+
+
     <div class="background"></div>
-    <main>
-        <div class="left-column">
-            <h1 class="main-title">Welcome</h1>
-            <div class="bottom-links">
-                <a href="#">Privacy policy</a>
-                <span>&amp;</span>
-                <a href="#">terms of service</a>
-            </div>
+  <center> <div class="left-column">
+        <h1 class="main-title">Welcome</h1>
+        <br>
+        <br>
+        <center>  <button class="hide" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">REGISTER</button></center>
+
+        <div class="bottom-links">
+            <a href="#">Privacy policy</a>
+            <span>&amp;</span>
+            <a href="#">terms of service</a>
         </div>
+    </div>
+</center> 
+    <main>
+        
+        
+        
+    
+
         <div class="right-column">
-            <div class="close">x</div>
             <form action="/signup" class="form" method="post">
                 <div class="form-row">
                     <label for="username">Username</label>
@@ -54,6 +125,7 @@
                 </div>
 
                 <div class="form-row flex-row">
+
                     <button type="submit">Register</button>
                     <span>or</span>
                 
@@ -61,6 +133,8 @@
             </form>
             <form id="signin" action="/" method="get" onclick="submitf()"><a href="#">Sign in</a></form>
         </div>
+    </div>
+
     </main>
 
     <script>
@@ -69,6 +143,8 @@
             form.submit();
         }
     </script>
+
+
 </body>
 
 </html>

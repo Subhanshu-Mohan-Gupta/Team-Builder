@@ -1,20 +1,56 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="request.css">
-    </head>
-    <body>
-        <button id="back" onclick="history.back()">Dashboard</button>
-        <center>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="request.css">
+</head>
+
+<body>
+    <div class="req">
         <p>Requests to join your Team</p>
-        <br>
-       
-        <div class="request_container">
-           
+    </div>
 
+    <div class="btn">
+        <button id="back" onclick="history.back()" class="slide">Dashboard</button>
+    </div>
 
+    <div class="request_container">
+        <div class="request">
+            <div class="user">Ved Nande</div>
+            <div class="acptrej">
+                <div id="accept"
+                    onclick="accept(this.getAttribute(`sender`), this.getAttribute(`receiver`), this.getAttribute(`docid`), this.getAttribute(`idea_id`))">
+
+                </div>
+                <div id="decline"
+                    onclick="decline(this.getAttribute(`sender`), this.getAttribute(`receiver`), this.getAttribute(`docid`), this.getAttribute(`idea_id`))">
+                </div>
+            </div>
         </div>
-      
-    </body>
+    </div>
+    </div>
+
     <script type="module" src="/views/Team-Builder-Dashboard/requests/request-page.js"></script>
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
 </html>

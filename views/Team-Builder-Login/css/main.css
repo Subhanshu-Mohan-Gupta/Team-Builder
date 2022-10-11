@@ -18,6 +18,15 @@ body * {
   filter: blur(20px);
 }
 
+
+
+
+.hide{
+  display: none;
+}
+
+
+
 main {
   display: inline-block;
   width: 800px;
@@ -58,7 +67,10 @@ main {
   top: 30px;
   bottom: 30px;
   left: 0;
+  margin-left: 15%;
+  
 }
+
 
 .bottom-links {
   position: absolute;
@@ -95,7 +107,46 @@ main {
   background-color: #fff;
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  .right-column{
+    display: none;
+  }
+  .hide { display:block; 
+    padding-left: 50px;
+    padding-right: 50px;
+    line-height: 40px;
+    font-size: 20px;
+    background: #015cda;
+    background: linear-gradient(47deg, #234ad5 0%, #0265de 100%);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 #0005;
+    cursor: pointer;
+  
+  }
+  .left-column{
+    width: 100%;
+    margin-left: 30%;
+    margin-top: 20%;
 
+  }
+  .logo-text{
+    width: auto;
+  }
+  .logo{
+    width: auto;
+  }
+  
+}
+
+@media only screen and (min-width: 992px)
+{
+  .modal{
+    display: none;
+  }
+   
+  }
 .close {
   display: inline-block;
   width: 60px;
@@ -112,4 +163,10 @@ main {
   right: 100px;
   position: absolute;
   bottom: 70px;
+}
+
+#sign {
+  right: 100px;
+  position: absolute;
+  bottom: 20px;
 }

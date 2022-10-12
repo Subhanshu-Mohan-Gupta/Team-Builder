@@ -14,7 +14,7 @@ Find Your Better Team
 
 
 ## Team Members
-1. Subhanshu Gupta
+1. Subhanshu Mohan Gupta
 2. Vidhya Lakshmi
 3. Naresh Chandanbatve
 

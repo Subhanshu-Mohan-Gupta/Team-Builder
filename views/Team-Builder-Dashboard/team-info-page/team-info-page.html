@@ -1,35 +1,31 @@
 <html>
-    <head>
-     <link rel="stylesheet" href="./team-info.css">
-    </head>
-    <body>
-      <button id="back" onclick="history.back()">Dashboard</button>
+  <head>
+    <link rel="stylesheet" href="./team-info.css" />
+  </head>
+  <body>
+    <main class="container">
+      <p class="team_name">Meet the Team</p>
+      <div class="leader-profile">
+        <div class="leader">
+          <p class="head">Team Leader :</p>
+          <p id="leader"></p>
+        </div>
+        <div class="description">
+          <p class="head">Description :</p>
+          <p class="description"></p>
+        </div>
 
-         <p id="team_name"></p>
+        <div class="members">
+          Members
+          <ul id="members"></ul>
+        </div>
+      </div>
+      <button class="back" onclick="history.back()">Dashboard</button>
+    </main>
+  </body>
 
-         
-
-         <div class="back">
-             <div class="leader">
-                <p class="head"> Team Leader : </p><p id="leader"></p>
-             </div>
-             <div class="description">
-                <p class="head"> Description : </p><p id="description"></p> 
-              </div>
-
-              <div class="members">
-                Members
-                <ul id="members">
-                
-    
-                </ul>
-            </div>
-              
-
-         </div>
-        
-    </body>
-
-    <script type="module" src="/views/Team-Builder-Dashboard/team-info-page/team-info.js"></script>
-
+  <script
+    type="module"
+    src="/views/Team-Builder-Dashboard/team-info-page/team-info.js"
+  ></script>
 </html>

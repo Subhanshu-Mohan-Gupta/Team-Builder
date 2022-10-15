@@ -68,20 +68,32 @@ So we the team behind Team Builder are budding developers with so much aspiratio
    ```bash 
    git clone https://github.com/MLH-LHD-Build-2022/Team-Builder
    ```
-   
+
  3. run <br>
    ```bash
-   npm install express
+   npm install
    ```
-  4. run <br>
-   ```bash
-   npm install firebase cookie-parser express-session
-   ```   
-  5. run <br>
+
+  4. Create `.env` file in the root directory. <br>
+
+  5. Create a web project in the firebase console and copy the `firebase options`. <br>
+
+  6. Paste the options in `.env` file 
+  > Replace all the `:` with `=` and eleminate all the `,` and `blank spaces` as depicted in the code block below.
+   ```dotenv
+   apiKey="apiKey from your firebase project"
+   authDomain="authDomain from your firebase project"
+   projectId="projectId from your firebase project"
+   storageBucket="storageBucket from your firebase project"
+   messagingSenderId="messagingSenderId from your firebase project"
+   appId="appId from your firebase project"
+   measurementId="measurementId from your firebase project"
+   ```
+  7. run <br>
    ```bash
    node index.js
    ```
-  6. Open any browser and paste this `` http://localhost:4000/`` <br>
+  8. Open any browser and paste this `` http://localhost:4000/`` <br>
 
 
 #### Now you're good to go !! 

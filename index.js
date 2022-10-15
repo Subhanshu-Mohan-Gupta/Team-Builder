@@ -1,12 +1,13 @@
+require('dotenv').config()
 const fire = require("firebase");
 fire.initializeApp({
-    apiKey: "AIzaSyAh6TNZwIs92kWMOCdRHHJdxfcRCl8zue0",
-    authDomain: "local-dev-chat.firebaseapp.com",
-    projectId: "local-dev-chat",
-    storageBucket: "local-dev-chat.appspot.com",
-    messagingSenderId: "102203063472",
-    appId: "1:102203063472:web:6f2b1467e172988636cf75",
-    measurementId: "G-GJTLTZEDVL"
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId,
+    measurementId: process.env.measurementId
 })
 
  require("firebase/firestore");

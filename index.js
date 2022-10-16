@@ -143,11 +143,11 @@ app.post("/signup", upload.single('logo_input'), (req, res) => {
 
 
 app.get('/',(req,res) => {
-    session=req.session;
-    if(session.userid){
+    global.session=req.session;
+    if(global.session.userid){
         res.render('Team-Builder-Dashboard/index', {
-            user : session.userid,
-            profile_url: users[session.ind].profileurl
+            user : global.session.userid,
+            profile_url: users[global.session.ind].profileurl
         });
     }else
     res.render('Team-Builder-Login/sign-in/signin',{root:__dirname});
@@ -165,8 +165,9 @@ app.post("/dashboard", (req, res) => {
               session = req.session;
               session.userid = req.body.username;
               session.ind = index;
-              console.log(req.session);
-            
+              console.log(session);
+//              console.log(window.session);
+              
             var user = session.userid;
               res.render("Team-Builder-Dashboard/index", {
                   user : user,
@@ -181,8 +182,9 @@ app.post("/dashboard", (req, res) => {
 
 
 app.post("/myteam", (req, res) => {
-    var my_team = users[session.ind].team;
-    var my_user = users[session.ind].username;
+    console.log(global.session);
+    var my_team = users[global.session.ind].team;
+    var my_user = users[global.session.ind].username;
     res.render("Team-Builder-ChatUI/index", {
         team : my_team,
         user : my_user
@@ -200,7 +202,7 @@ app.post("/idea", (req,res) => {
 
 app.post("/addIdea", (req, res) => {
     
-    var my_user = users[session.ind].username;
+    var my_user = users[global.session.ind].username;
     res.render("Team-Builder-ChatUI/index", {
         user : my_user
     });
@@ -210,7 +212,7 @@ app.post("/addIdea", (req, res) => {
 
 
 app.post("/requests", (req, res) => {
-    var my_user = users[session.ind].username;
+    var my_user = users[global.session.ind].username;
     res.redirect("./views/Team-Builder-Dashboard/requests/request-page.html?user="+my_user);
     })
 

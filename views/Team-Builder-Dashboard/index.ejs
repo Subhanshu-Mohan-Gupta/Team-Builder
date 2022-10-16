@@ -111,15 +111,15 @@
     <script>
 
     function addIdea() {
-      window.location.href = "http://localhost:4000/views/Team-Builder-Dashboard/idea-form/index.html?user=<%= user %>";
+      window.location.href = "./views/Team-Builder-Dashboard/idea-form/index.html?user=<%= user %>";
     }
 
       function myIdea(idd) {
-    window.location.href = "http://localhost:4000/views/Team-Builder-Dashboard/idea-info-page/idea-info.html?docid="+idd+"&user=<%= user %>";
+    window.location.href = "./views/Team-Builder-Dashboard/idea-info-page/idea-info.html?docid="+idd+"&user=<%= user %>";
       }
 
       window.showTeam = function(id){
-  window.location.href = "http://localhost:4000/views/Team-Builder-Dashboard/team-info-page/team-info-page.html?docid="+id+"&user=<%= user %>";
+  window.location.href = "./views/Team-Builder-Dashboard/team-info-page/team-info-page.html?docid="+id+"&user=<%= user %>";
 }
 
       feather.replace();
